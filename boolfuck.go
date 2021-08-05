@@ -10,18 +10,14 @@ type BoolFuck struct {
 	// WriteStdOut is if you would like to write out the result
 	// of your boolfuck program to be written to the stdout.
 	//
-	// If you would like to see the result of your program, set this to truw.
+	// If you would like to see the result of your program, set this to true.
 	WriteStdOut bool
 
 	progmem     [10000]int
 	current_pos int
 }
 
-// Parse parses a binfuck program.
-//
-// There are checks in place to detect if the provided program contains
-// excessive operators. If there are, an error is returned.
-//
+// Parse parses a boolfuck program.
 func (b *BoolFuck) Parse() int {
 	p := b.Program
 	mem := b.progmem
