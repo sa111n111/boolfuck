@@ -4,8 +4,7 @@ import "fmt"
 
 // BinFuck -> see package docs
 type BoolFuck struct {
-	// The BinFuck program itself. Defined as an array of
-	// bytes.
+	// The BinFuck program itself. Defined as string
 	Program string
 
 	// WriteStdOut is if you would like to write out the result
