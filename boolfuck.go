@@ -1,6 +1,10 @@
 package boolfuck
 
-import "fmt"
+import (
+	"bytes"
+	"fmt"
+	"os"
+)
 
 // BoolFuck is a esoteric programming language that consists of both + and - symbols
 // both being representations of true or false.
@@ -19,7 +23,7 @@ type BoolFuck struct {
 }
 
 // Parse parses a boolfuck program.
-func (b *BoolFuck) Parse() int {
+func (b *BoolFuck) Parse(program string) int {
 	p := b.Program
 	mem := b.progmem
 	offset := b.current_pos
@@ -44,4 +48,25 @@ func (b *BoolFuck) Parse() int {
 	}
 
 	return mem[offset]
+}
+
+// Open opens a boolfuck file and fills in the
+// `Program` field. Parse() is then called on the read
+// contents. If provided, Parse() will directly write the result
+// of the read file.
+func (b *BoolFuck) Open(filename string) {
+	file, err := os.Open(filename)
+	buf := new(bytes.Buffer)
+
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	buf.ReadFrom(file)
+
+	contents := buf.String()
+	b.Program = contents
+
+	b.Parse(b.Program)
 }
