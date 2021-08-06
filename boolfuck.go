@@ -53,7 +53,7 @@ func (b *BoolFuck) Parse(program string) int {
 // Open opens a boolfuck file and fills in the
 // `Program` field. Parse() is then called on the read
 // contents. If provided, Parse() will directly write the result
-// of the read file.
+// of the read file to the stdout.
 func (b *BoolFuck) Open(filename string) {
 	file, err := os.Open(filename)
 	buf := new(bytes.Buffer)
