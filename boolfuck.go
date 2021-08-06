@@ -2,7 +2,8 @@ package boolfuck
 
 import "fmt"
 
-// BinFuck -> see package docs
+// BoolFuck is a esoteric programming language that consists of both + and - symbols
+// both being representations of true or false.
 type BoolFuck struct {
 	// The BinFuck program itself. Defined as string
 	Program string
