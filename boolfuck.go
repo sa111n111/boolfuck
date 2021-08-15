@@ -9,7 +9,7 @@ import (
 // BoolFuck is a esoteric programming language that consists of both + and - symbols
 // both being representations of true or false.
 type BoolFuck struct {
-	// The BinFuck program itself. Defined as string
+	// The BoolFuck program itself. Defined as string
 	Program string
 
 	// WriteStdOut is if you would like to write out the result
