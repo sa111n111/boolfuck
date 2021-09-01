@@ -43,7 +43,7 @@ func (b *BoolFuck) Parse(program string) int {
 				fmt.Print("false ")
 			}
 		} else {
-			break
+			fmt.Println("Unrecognizable token found")
 		}
 	}
 

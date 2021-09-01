@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sal1entx86/boolfuck"
+	"github.com/sa111n111/boolfuck"
 )
 
 func main() {
